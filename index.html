@@ -18,31 +18,29 @@
     background-color: #8095D9;
     color: #fff;
     padding: 20px;
-    position: relative;
-    font-family: "Century Gothic", Arial, sans-serif;
   }
 
   h1 {
     margin: 10px 0;
-    font-size: 36px;
+    font-size: 2em;
   }
   h2 {
     margin-top: 20px;
-    font-size: 26px;
+    font-size: 1.5em;
   }
-
 
   nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: #008fa4;
   }
   nav button {
     background: none;
     border: none;
-    padding: 14px 20px;
+    padding: 1em 1.5em;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1em;
     color: #fff;
     transition: background 0.3s;
   }
@@ -52,21 +50,121 @@
 
   section {
     display: none;
+    width: 90%;
     max-width: 800px;
     margin: 20px auto;
     background: #fff;
-    padding: 20px;
+    padding: 2em;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     font-family: "Century Gothic", Arial, sans-serif;
-    font-size: 20px;
+    font-size: 1em;
   }
   section.active {
     display: block;
   }
+
+  /* Адаптивность через медиазапросы */
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 1.8em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+    }
+
+    nav {
+      flex-direction: column;
+    }
+
+    nav button {
+      width: 100%;
+      padding: 12px 0;
+    }
+
+    section {
+      padding: 1.5em;
+      font-size: 0.95em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    h2 {
+      font-size: 1.2em;
+    }
+  }
 </style>
 </head>
 <body>
+
+<header>
+  <h1>Мерклингер Алиса Дмитриевна</h1>
+</header>
+<div class="separator"></div>
+
+<nav>
+  <button onclick="showSection('about')">О себе🤍</button>
+  <button onclick="showSection('experience')">Опыт работы🤍</button>
+  <button onclick="showSection('education')">Образование🤍</button>
+  <button onclick="showSection('contacts')">Контакты🤍</button>
+</nav>
+
+<section id="about" class="active">
+  <h2>О себе (⌒‿⌒)</h2>
+  <p>
+    Я ответственная и целеустремленная молодая специалистка, обладающая аналитическим складом ума и сильным желанием развиваться в сфере финансов и кредитования. Обладаю отличной способностью к быстрому обучению, тщательно подхожу к выполнению поставленных задач и умею находить оптимальные решения в сложных ситуациях. Могу эффективно работать как самостоятельно, так и в команде, проявляя инициативу и инициативность.
+  </p>
+  <p>
+    К важным качествам могу отнести внимательность к деталям, организованность и настойчивость. Умею адаптироваться к новым условиям и быстро усваиваю новую информацию. В работе ценю честность, ответственность и профессионализм. Стремлюсь к постоянному развитию и совершенствованию своих навыков, чтобы быть полезной для работодателя и добиваться высоких результатов.
+  </p>
+</section>
+
+<section id="experience">
+  <h2>Опыт работы ヽ(・ω・)ﾉ</h2>
+  <ul>
+    <li>Ассистент бухгалтера — самозанятое хобби, 2023-2024</li>
+    <li>Экономист — небольшая финансовая компания, 2026-2028</li>
+  </ul>
+</section>
+
+<section id="education">
+  <h2>Образование ( ´ ω ` )</h2>
+  <ul>
+    <li>ИРНИТУ — Бакалавр по специальности "Финансы и кредит", 2024-2028</li>
+  </ul>
+</section>
+
+<section id="contacts">
+  <h2>Контакты ٩(◕‿◕)۶</h2>
+  <p>Телефон: 89246577769</p>
+  <p>Почта: almerklin@mail.ru</p>
+</section>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => {
+      section.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
 
 <header>
   <h1>Мерклингер Алиса Дмитриевна</h1>
